@@ -1,0 +1,692 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #0d0d12;
+    color: white;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            #5b315f,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #1c3a50,
+            transparent 35%
+        ),
+        #0d0d12;
+}
+
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: #ffffff08;
+
+    filter: blur(10px);
+}
+
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 900px;
+
+    animation: fadeIn 1.5s ease;
+}
+
+
+.small-title {
+    letter-spacing: 6px;
+
+    font-size: 13px;
+
+    color: #d7a9dc;
+
+    margin-bottom: 25px;
+}
+
+
+h1 {
+    font-size: clamp(45px, 8vw, 90px);
+
+    line-height: 1.05;
+
+    font-weight: 400;
+
+    margin-bottom: 25px;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #d9b5dc,
+        #ffffff
+    );
+
+    background-size: 200%;
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: shine 5s linear infinite;
+}
+
+
+.age {
+    font-size: 28px;
+
+    color: #ddd;
+
+    margin-bottom: 10px;
+}
+
+
+#age,
+#age-2 {
+    color: #e6b6ea;
+
+    font-weight: bold;
+}
+
+
+.birthday-date {
+    color: #999;
+
+    font-size: 16px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    border: 1px solid #b879c0;
+
+    border-radius: 50px;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: .3s;
+
+    background: #ffffff08;
+
+    backdrop-filter: blur(10px);
+}
+
+
+.button:hover {
+    background: #b879c0;
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px #b879c055;
+}
+
+
+/* =========================
+   GALLERY SECTION
+========================= */
+
+.gallery-section {
+    padding: 100px 7%;
+
+    background: #111116;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+
+.gallery-section h2 {
+    font-size: 42px;
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+}
+
+
+.section-description {
+    color: #888;
+
+    margin-bottom: 50px;
+}
+
+
+/* =========================
+   GALLERY VIEWPORT
+========================= */
+
+.gallery {
+    width: 100%;
+
+    max-width: 1100px;
+
+    margin: 50px auto;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+/* =========================
+   TRACK
+========================= */
+
+.gallery-track {
+    display: flex;
+
+    width: max-content;
+
+    animation:
+        infiniteSlide 22s linear infinite;
+}
+
+
+/* =========================
+   GROUP
+========================= */
+
+.gallery-group {
+    display: flex;
+
+    gap: 20px;
+
+    padding-right: 20px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================
+   PHOTO CARD
+========================= */
+
+.photo-card {
+    flex: 0 0 280px;
+
+    width: 280px;
+
+    height: 350px;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    background: #1c1c22;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.photo-card img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.5s ease;
+}
+
+
+/* =========================
+   IMAGE HOVER
+========================= */
+
+.photo-card:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   INFINITE ANIMATION
+========================= */
+
+@keyframes infiniteSlide {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
+
+
+/* =========================
+   STORY
+========================= */
+
+.story {
+    padding: 120px 20px;
+
+    background:
+        linear-gradient(
+            #0d0d12,
+            #17131a
+        );
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+.story-card {
+    max-width: 850px;
+
+    text-align: center;
+
+    padding: 60px 30px;
+
+    border-top: 1px solid #654868;
+
+    border-bottom: 1px solid #654868;
+}
+
+
+.story-card p {
+    font-size: clamp(22px, 4vw, 36px);
+
+    line-height: 1.7;
+
+    font-style: italic;
+
+    color: #d6c5d8;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 35px;
+
+    text-align: center;
+
+    color: #666;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   GENERAL ANIMATION
+========================= */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+
+@keyframes shine {
+
+    0% {
+        background-position: 0%;
+    }
+
+    100% {
+        background-position: 200%;
+    }
+
+}
+
+
+/* =========================
+   PHOTO POPUP
+========================= */
+
+.photo-modal {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.9);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+    z-index: 9999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: 0.3s ease;
+}
+
+
+.photo-modal.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+/* =========================
+   MODAL CONTENT
+========================= */
+
+.modal-content {
+    position: relative;
+
+    max-width: 900px;
+
+    width: 100%;
+
+    text-align: center;
+
+    animation:
+        popupImage 0.4s ease;
+}
+
+
+/* =========================
+   MODAL IMAGE
+========================= */
+
+.modal-content img {
+    display: block;
+
+    width: auto;
+
+    max-width: 100%;
+
+    max-height: 75vh;
+
+    margin: auto;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+
+/* =========================
+   MODAL CAPTION
+========================= */
+
+#modalCaption {
+    margin-top: 20px;
+
+    color: white;
+
+    font-size: 18px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-btn {
+    position: absolute;
+
+    top: -50px;
+
+    right: 0;
+
+    width: 42px;
+
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 30px;
+
+    line-height: 40px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.close-btn:hover {
+    background:
+        rgba(255, 255, 255, 0.3);
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================
+   POPUP ANIMATION
+========================= */
+
+@keyframes popupImage {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1);
+    }
+
+}
+
+
+/* =========================
+   AUDIO
+========================= */
+
+div.audio {
+    position: fixed;
+
+    bottom: 20px;
+
+    right: 20px;
+
+    z-index: 1000;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+div.back-button-container a {
+    position: fixed;
+
+    top: 20px;
+
+    left: 20px;
+
+    z-index: 1000;
+
+    color: white;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+
+    .photo-card {
+        flex: 0 0 240px;
+
+        width: 240px;
+
+        height: 300px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .hero {
+        min-height: 90vh;
+    }
+
+
+    h1 {
+        font-size: 45px;
+    }
+
+
+    .age {
+        font-size: 23px;
+    }
+
+
+    .gallery-section {
+        padding: 70px 20px;
+    }
+
+
+    .gallery-section h2 {
+        font-size: 32px;
+    }
+
+
+    .gallery-group {
+        gap: 15px;
+
+        padding-right: 15px;
+    }
+
+
+    .gallery-track {
+        animation-duration: 18s;
+    }
+
+
+    .photo-card {
+        flex: 0 0 210px;
+
+        width: 210px;
+
+        height: 270px;
+    }
+
+
+    .story {
+        padding: 80px 20px;
+    }
+
+
+    .photo-modal {
+        padding: 20px;
+    }
+
+
+    .modal-content img {
+        max-height: 70vh;
+    }
+
+
+    .close-btn {
+        top: -50px;
+
+        right: 0;
+    }
+
+}
